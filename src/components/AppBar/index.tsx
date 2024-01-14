@@ -1,6 +1,6 @@
 import { Box } from "@mui/material"
-import ModeSelect from "../ModeSelect"
-import { Trello_Custom }  from "../../theme"
+import ModeSelect from "~/components/ModeSelect"
+import { Trello_Custom }  from "~/theme"
 
 function AppBar() {
   return (

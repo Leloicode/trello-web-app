@@ -1,7 +1,7 @@
 import { Box } from "@mui/material"
-import AppBar from "../../components/AppBar"
 import BoardBar from "./BoardBar"
-import { Trello_Custom } from "../../theme"
+import { Trello_Custom } from "~/theme"
+import AppBar from "~/components/AppBar"
 
 function Board() {
   return (
