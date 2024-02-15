@@ -1,31 +1,24 @@
-import { FormControl, InputLabel, MenuItem, Select, useColorScheme } from "@mui/material"
-import { ChangeEvent } from "react";
-
+import { Tooltip, useColorScheme } from "@mui/material"
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 type Mode = 'light' | 'dark' | 'system';
 
 function ModeSelect() {
   const {mode, setMode} = useColorScheme();
   
-  const handleChange = (event: ChangeEvent<{ value: unknown }>): void => {
-    const selectMode = event.target.value as Mode;
-    setMode(selectMode);
+  const handleChange = (value: Mode): void => {
+    setMode(value);
   }
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-      <InputLabel id="demo-select-small-label">Mode</InputLabel>
-      <Select
-        labelId="dark-light-select-small-label"
-        id="dark-light-select-small"
-        value={mode}
-        label="mode"
-        onChange={(event) => handleChange(event as ChangeEvent<{ value: unknown }>)}
-      >
-        <MenuItem value='light'>Light</MenuItem>
-        <MenuItem value='dark'>Dark</MenuItem>
-        <MenuItem value='system'>System</MenuItem>
-      </Select>
-    </FormControl>
+    <Tooltip title="Mode">
+      {/* light - icon sun*/}
+      {mode == 'light' ? <DarkModeOutlinedIcon  sx={{
+        cursor: 'pointer'
+      }} onClick={() => {handleChange('dark')}}/> : <LightModeOutlinedIcon sx={{
+        cursor: 'pointer'
+      }} onClick={() => {handleChange('light')}}/>}
+    </Tooltip>
   )
 }
 

@@ -1,18 +1,66 @@
-import { Box } from "@mui/material"
+import { Avatar, AvatarGroup, Box, Button, Chip } from "@mui/material"
 import { Trello_Custom } from "../../../theme"
-
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import VpnLockIcon from '@mui/icons-material/VpnLock';
+import AddToDriveIcon from '@mui/icons-material/AddToDrive';
+import BoltIcon from '@mui/icons-material/Bolt';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 function BoardBar() {
   return (
     <>
-      <Box sx={{
+      <Box px={2} sx={{
         width: '100%',
         height: () => Trello_Custom.layout.boardBarHeight,
-        backgroundColor: 'primary.dark',
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'rgba(255, 255, 255, 0.28)',
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+        backdropFilter: 'blur(4.8px)',
+        WebkitBackdropFilter: 'blur(4.8px)',
+        justifyContent: 'space-between',
+        border: '1px solid rgba(255, 255, 255, 0.25)',
       }}>
-        Board bar
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 2
+        }}>
+          <Chip sx={{
+            cursor: 'auto'
+          }} icon={<DashboardIcon />} label="ANT" />
+          <Chip icon={<VpnLockIcon />} label="Public/Private Workspace" />
+          <Chip icon={<AddToDriveIcon />} label="Add To Google Driver" />
+          <Chip icon={<BoltIcon />} label="Automation" />
+          <Chip icon={<FilterListIcon />} label="Filter" />
+        </Box>
+        <Box sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 2
+        }}>
+          <Button variant="outlined" 
+            href="#outlined-buttons" 
+            startIcon = {<PersonAddAltIcon />}
+            sx={{
+              backgroundColor: '#d8a3c357',
+              border: 'none',
+              
+              '&:hover': {
+                backgroundColor: '#cccccc',
+                border: 'none',
+              },
+            }}>Mời</Button>
+          <AvatarGroup  max={3}>
+            <Avatar alt="Remy Sharp" src="https://trello-members.s3.amazonaws.com/6453371c51b4c643bf8deef9/0c6e615330230eb85841adff7261b5fb/170.png" />
+            <Avatar alt="Remy Sharp" src="https://trello-members.s3.amazonaws.com/649004d3bb83800f9686dc10/d79d32ff10ec14beda2481eb947c6312/170.png" />
+            <Avatar alt="Remy Sharp" src="https://trello-members.s3.amazonaws.com/6453371c51b4c643bf8deef9/0c6e615330230eb85841adff7261b5fb/170.png" />
+            <Avatar alt="Remy Sharp" src="https://trello-members.s3.amazonaws.com/6453371c51b4c643bf8deef9/0c6e615330230eb85841adff7261b5fb/170.png" />
+          </AvatarGroup>
+        </Box>
       </Box>
+      
     </>
   )
 }
