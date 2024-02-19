@@ -14,8 +14,8 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-
-    'no-console': 1, // no console
+    'no-console': 1, // no console,
+    "@typescript-eslint/no-explicit-any": "off",
     'no-unused-vars': 1, // no unused variables
     "indent": ["warn", 2]
   },

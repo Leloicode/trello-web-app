@@ -5,9 +5,15 @@ import { CssVarsTheme, experimental_extendTheme as extendTheme} from '@mui/mater
 export const Trello_Custom = {
   layout: {
     appBarHeight: '48px',
-    boardBarHeight: '56px'
+    boardBarHeight: '56px',
+    boardContentHeight:  (): string => {
+      return `calc(100vh - ${Trello_Custom.layout.appBarHeight} - ${Trello_Custom.layout.boardBarHeight})`;
+    },
+    boardContentTitleHeight: '50px',
+    boardContentFooterHeight: '56px',
   },
 }
+
 const theme: CssVarsTheme = extendTheme({
   typography: {
     fontFamily:  '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Droid Sans, Helvetica Neue, sans-serif',
@@ -75,8 +81,9 @@ const theme: CssVarsTheme = extendTheme({
       styleOverrides: {
         // Name of the slot
         avatar: {
-          width: 26,
-          height: 26,
+          // width and height (avatar sẽ set width and height riêng)
+          // width: 26,
+          // height: 26,
           fontSize: 12,
           color: '#333',
           marginLeft: -3,
