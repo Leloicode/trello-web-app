@@ -1,4 +1,3 @@
-import ModeSelect from "~/components/ModeSelect"
 import { Trello_Custom }  from "~/theme"
 import AppsIcon from '@mui/icons-material/Apps';
 import { ReactComponent as TrelloIcon } from '~/assets/trello.svg';
